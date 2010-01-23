@@ -73,7 +73,6 @@ var VersionManager = (function() {
 			if (!props || !props.length > 0) {return tgt;}
 			var i = props.length;
 			while (--i >= 0) tgt[props[i]] = null;
-	        tgt[props[0]] = null; 
 			return tgt;
 		};
 		
