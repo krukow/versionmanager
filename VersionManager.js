@@ -97,7 +97,7 @@ var VersionManager = (function() {
 				i = props.length;
 	        while (--i >= 0) {
 	        	prop = props[i];
-	        	realProto[prop] = realProto[prop] || createDelegateToVersionFn(ConstructorFnName, prop);
+	        	realProto[prop] = createDelegateToVersionFn(ConstructorFnName, prop);
 	     	}
 		};
 

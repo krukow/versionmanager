@@ -68,13 +68,6 @@ var VersionManager = (function() {
 			}
 			return F;
 		};
-
-		var apply = function(tgt, src) {
-			for (var p in src) {
-				tgt[p] = src[p];
-			}
-			return tgt;
-		};
 		
 		var proxyGlobalProperties = function(tgt, props) {
 			if (!props || !props.length > 0) {return tgt;}
