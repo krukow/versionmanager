@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  * --
  *
- * @package JSMin
+ * @package VersionManager
  * @author Karl Krukow <kkr@trifork.com> 
  * @author Jimmy Juncker <jju@trifork.com>
  * @copyright 2010 Karl Krukow <kkr@trifork.com>
