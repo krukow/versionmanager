@@ -56,7 +56,7 @@ var VersionManager = (function() {
 		 */
 		var proxyConstructor = function(ConstructorFnName, ConstructorFn) {
 			function F(a,b,c,d,e) {
-				return (this instanceof F) ? new ConstructorFn(a) : ConstructorFn.call(this, a,b,c,d,e); 
+				return (this instanceof F) ? new ConstructorFn(a,b,c,d,e) : ConstructorFn.apply(this, arguments); 
 			}
             
 			F.prototype = F._proxyprototype = object(ConstructorFn.prototype);
