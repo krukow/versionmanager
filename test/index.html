@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script src="VersionManager.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+<script src="prototype-1.5.1.2.js"></script>
+<script src="prototype-1.6.1.js"></script>
+
+
+<script>
+	
+	with (VersionManager.version("prototype-1.6.1")) {
+		alert(typeof "".gsub);// alerts 'function'
+		alert(typeof Object.extend);// alerts 'function'
+		$A([1,2,3])._each(function(x){
+			alert(x);
+		});// alerts '1','2','3'
+	}
+	alert(typeof Object.extend);//alerts undefined
+	with (VersionManager.version("prototype-1.5.1.2")) {
+		//prototype 1.5.1.2 active....
+	}
+	
+	
+	
+</script>
+</body>
+</html>
+

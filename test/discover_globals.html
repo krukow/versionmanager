@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+
+<body>
+<script>
+	var _target = Object.prototype;
+
+	document.write("[");
+	for (var p in _target) {
+		document.write("'"+p+"', \n");
+	}
+	document.write("];");
+</script>
+<script src="prototype-1.6.0.3.js"></script>
+<script>
+			(function(){
+				var _after = {};
+				for (var p in _target) {
+					_after[p] = true;
+				}
+				
+			})();
+        </script>
+</body>
+</html>
