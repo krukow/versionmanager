@@ -56,7 +56,23 @@ var VersionManager = (function() {
 		 */
 		var proxyConstructor = function(ConstructorFnName, ConstructorFn) {
 			function F() {
-				return (this instanceof F) ? new ConstructorFn(arguments[0],arguments[1],arguments[2],arguments[3],arguments[4]) : ConstructorFn.apply(this, arguments); 
+				if (this.constructor == F) {
+					if (arguments.length == 0)
+						return new ConstructorFn();
+					if (arguments.length == 1) 
+						return new ConstructorFn(arguments[0]);
+					if (arguments.length == 2) 
+						return new ConstructorFn(arguments[0], arguments[1]);
+					if (arguments.length == 3) 
+						return new ConstructorFn(arguments[0], arguments[1], arguments[2]);
+					if (arguments.length == 4) 
+						return new ConstructorFn(arguments[0], arguments[1], arguments[2], arguments[3]);
+					if (arguments.length == 5) 
+						return new ConstructorFn(arguments[0], arguments[1], arguments[2], arguments[3],arguments[4]);
+					//... more if needed..
+				} else {
+					return ConstructorFn.apply(this, arguments);
+				}
 			}
             
 			F.prototype = F._proxyprototype = object(ConstructorFn.prototype);
