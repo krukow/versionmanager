@@ -56,7 +56,7 @@ var VersionManager = (function() {
 		 */
 		var proxyConstructor = function(ConstructorFnName, ConstructorFn) {
 			function F() {
-				if (this.constructor == F) {
+				if (this instanceof F && this.constructor===ConstructorFn) {
 					if (arguments.length == 0)
 						return new ConstructorFn();
 					if (arguments.length == 1) 
